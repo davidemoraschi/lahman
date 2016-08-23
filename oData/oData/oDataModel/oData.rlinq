@@ -1,0 +1,768 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="EntitiesModel" namespace="oDataModel" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
+  <orm:orm name="EntitiesModel" backend="mssql" default-schema="dbo" xmlns:orm="http://tempuri.org/ORM">
+    <orm:namespace name="oDataModel" default="true">
+      <orm:class name="Team" uniqueId="b150e994-d200-4ec9-bc64-ff0f1765f88f">
+        <orm:table name="Teams" />
+        <orm:identity>
+          <orm:multiple-field>
+            <orm:single-field field-name="_yearID" />
+            <orm:single-field field-name="_teamID" />
+          </orm:multiple-field>
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_yearID" property="yearID" behavior="readwrite" uniqueId="9ad916a6-9161-4edc-a0af-39a8215a1012" type="System.Int16">
+          <orm:column name="yearID" sql-type="smallint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_lgID" property="lgID" behavior="readwrite" uniqueId="372870a8-04df-434b-a32e-bd1b109610d6" type="System.String">
+          <orm:column name="lgID" sql-type="nvarchar" nullable="false" length="2" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_teamID" property="teamID" behavior="readwrite" uniqueId="5bf9372c-9e1c-478f-b9a4-18ed9bbb91d2" type="System.String">
+          <orm:column name="teamID" sql-type="nvarchar" nullable="false" length="3" scale="0" primary-key="true" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_franchID" property="franchID" behavior="readwrite" uniqueId="de99d4e9-ddf3-46da-91ad-049323b6dd6a" type="System.String">
+          <orm:column name="franchID" sql-type="nvarchar" nullable="false" length="3" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_divID" property="divID" behavior="readwrite" uniqueId="36946e0b-cb91-429a-88d8-8f2ab186a0fe" type="System.String">
+          <orm:column name="divID" sql-type="nvarchar" nullable="true" length="1" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_Rank" property="Rank" behavior="readwrite" uniqueId="512e69dc-3b38-43de-9c30-e917f54fd9f1" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="Rank" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_G" property="G" behavior="readwrite" uniqueId="96bac5e6-2149-4f30-8c21-8203223f284d" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="G" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_Ghome" property="Ghome" behavior="readwrite" uniqueId="4e9ab4bd-64c0-41a5-aa0c-80466fc2857e" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="Ghome" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_W" property="W" behavior="readwrite" uniqueId="06018e85-18f0-40ec-91e2-06e318808767" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="W" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_L" property="L" behavior="readwrite" uniqueId="f0c88379-96bb-44ba-9abe-11505736cf18" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="L" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_DivWin" property="DivWin" behavior="readwrite" uniqueId="66fc217b-c617-4518-9bdf-5fcb9edb4e95" type="System.String">
+          <orm:column name="DivWin" sql-type="nvarchar" nullable="true" length="1" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_WCWin" property="WCWin" behavior="readwrite" uniqueId="6caa5ff8-41d5-4ceb-a9da-a0475e7c872f" type="System.String">
+          <orm:column name="WCWin" sql-type="nvarchar" nullable="true" length="1" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_LgWin" property="LgWin" behavior="readwrite" uniqueId="c39337bd-009b-44d4-9fb8-c8ae3489b2e2" type="System.String">
+          <orm:column name="LgWin" sql-type="nvarchar" nullable="true" length="1" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_WSWin" property="WSWin" behavior="readwrite" uniqueId="9407d702-44cf-42db-b226-639017340c04" type="System.String">
+          <orm:column name="WSWin" sql-type="nvarchar" nullable="true" length="1" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_R" property="R" behavior="readwrite" uniqueId="e30d2618-c1b4-4447-85e7-768e26f0e60e" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="R" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_AB" property="AB" behavior="readwrite" uniqueId="d72a2ddc-1efe-49e8-bef7-202f95fa4584" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="AB" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_H" property="H" behavior="readwrite" uniqueId="656b6f69-db20-47be-871b-a0d4c14fb5f5" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="H" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_F_2B" property="F_2B" behavior="readwrite" uniqueId="038bbe62-7344-41d4-a7d0-86fbb5a31eb8" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="2B" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_F_3B" property="F_3B" behavior="readwrite" uniqueId="148e7c37-fe36-4673-9761-7304ab0c987f" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="3B" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_HR" property="HR" behavior="readwrite" uniqueId="36e1f005-5828-44fd-8267-9e07f1aa90da" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="HR" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_BB" property="BB" behavior="readwrite" uniqueId="c0d60d3b-20a4-4ba4-9a7c-410c2e3c3aa1" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="BB" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_SO" property="SO" behavior="readwrite" uniqueId="02625030-bdee-4780-a2a2-15b6de58fc43" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="SO" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_SB" property="SB" behavior="readwrite" uniqueId="ac654c80-166e-45e5-818b-67eeb7587b91" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="SB" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_CS" property="CS" behavior="readwrite" uniqueId="fe05caa4-8489-4dad-84e0-9e9267a5d868" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="CS" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_HBP" property="HBP" behavior="readwrite" uniqueId="1d471087-9c7d-4f52-b135-56b033b8caca" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="HBP" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_SF" property="SF" behavior="readwrite" uniqueId="5c599426-68f5-48f6-a163-75d72fa1f5c2" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="SF" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_RA" property="RA" behavior="readwrite" uniqueId="48b88296-50ea-4393-bf46-81870c27b7b1" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="RA" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_ER" property="ER" behavior="readwrite" uniqueId="7528f419-ffcb-4de3-92fa-830a4db59b41" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="ER" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_ERA" property="ERA" behavior="readwrite" uniqueId="413153dd-9faa-4fc9-a934-757e6597579d" type="System.Nullable`1[[System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="ERA" sql-type="float" nullable="true" length="0" scale="0" ado-type="Double" />
+        </orm:field>
+        <orm:field name="_CG" property="CG" behavior="readwrite" uniqueId="11827793-615d-41fa-b044-7730db3b7389" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="CG" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_SHO" property="SHO" behavior="readwrite" uniqueId="9bc9931c-04be-45de-b65f-3cb9a1d9ac08" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="SHO" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_SV" property="SV" behavior="readwrite" uniqueId="6efda094-0fa9-477d-b9a3-17a28b9c7698" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="SV" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_IPouts" property="IPouts" behavior="readwrite" uniqueId="968147ae-3618-411f-88f5-f23eb6e4ec5a" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="IPouts" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_HA" property="HA" behavior="readwrite" uniqueId="f429aa97-e5de-4536-80e0-08deb5c8bdf8" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="HA" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_HRA" property="HRA" behavior="readwrite" uniqueId="8195fd29-ae75-409a-938f-27cc14677f3e" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="HRA" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_BBA" property="BBA" behavior="readwrite" uniqueId="6f5b1624-acf9-4b10-9cfb-749a2d9b4488" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="BBA" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_SOA" property="SOA" behavior="readwrite" uniqueId="9a9d193c-b3f0-4ba3-8574-4251c9a95fab" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="SOA" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_E" property="E" behavior="readwrite" uniqueId="06b6a9da-8f75-431a-8572-2cc76b06895e" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="E" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_DP" property="DP" behavior="readwrite" uniqueId="c2bf3f0d-20bf-4883-aad3-e1fd45727eed" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="DP" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_FP" property="FP" behavior="readwrite" uniqueId="1effdf02-9ee4-491e-963e-77cc1aef631d" type="System.Nullable`1[[System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="FP" sql-type="float" nullable="true" length="0" scale="0" ado-type="Double" />
+        </orm:field>
+        <orm:field name="_name" property="name" behavior="readwrite" uniqueId="eb2f87e5-2f0d-4efe-8947-8723adf680db" type="System.String">
+          <orm:column name="name" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_park" property="park" behavior="readwrite" uniqueId="db8ae1c0-5ce8-4e9e-a699-73e30e754759" type="System.String">
+          <orm:column name="park" sql-type="nvarchar" nullable="true" length="255" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_attendance" property="attendance" behavior="readwrite" uniqueId="339d934f-3413-493c-8436-82d58ced7ca9" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="attendance" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_BPF" property="BPF" behavior="readwrite" uniqueId="01035909-0364-4772-9ed6-539ede078893" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="BPF" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_PPF" property="PPF" behavior="readwrite" uniqueId="a604c8c5-8b37-401b-b566-b235d9109b8c" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="PPF" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_teamIDBR" property="teamIDBR" behavior="readwrite" uniqueId="8229d66d-766b-4bed-a7fe-6d9400655391" type="System.String">
+          <orm:column name="teamIDBR" sql-type="nvarchar" nullable="true" length="3" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_teamIDlahman45" property="teamIDlahman45" behavior="readwrite" uniqueId="ec3886e3-fe38-4972-afb9-983ba6744234" type="System.String">
+          <orm:column name="teamIDlahman45" sql-type="nvarchar" nullable="true" length="3" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_teamIDretro" property="teamIDretro" behavior="readwrite" uniqueId="dd5b981d-3450-48b7-b9cf-febe1046a39c" type="System.String">
+          <orm:column name="teamIDretro" sql-type="nvarchar" nullable="true" length="3" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_teamIDyearID" property="teamIDyearID" behavior="readwrite" uniqueId="41e7dcaf-b100-4fed-8bc1-fa38887340c4" type="System.String">
+          <orm:column name="teamIDyearID" sql-type="nvarchar" nullable="false" length="9" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_Appearances" property="Appearances" behavior="readwrite" uniqueId="5ab92cb0-43b5-43b7-beed-ef7635acffe8" type="oDataModel.Appearance">
+          <orm:collection element-class="oDataModel.Appearance" inverse-field="_Team" order-by="" uniqueId="5a86438e-561e-474b-bf45-8f90350aea13" />
+        </orm:field>
+        <orm:index name="UK_Teams" unique="true">
+          <orm:columnMapping>
+            <orm:column name="teamIDyearID" sql-type="nvarchar" nullable="false" length="9" scale="0" ado-type="UnicodeStringVariableLength" />
+          </orm:columnMapping>
+        </orm:index>
+      </orm:class>
+      <orm:class name="Master" uniqueId="a65d9b59-ac5f-45de-9614-59be4800cb7f">
+        <orm:table name="Master" />
+        <orm:identity>
+          <orm:single-field field-name="_playerID" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_playerID" property="playerID" behavior="readwrite" uniqueId="eddd67b8-4414-4226-bddd-5ad99ec607fb" type="System.String">
+          <orm:column name="playerID" sql-type="nvarchar" nullable="false" length="10" scale="0" primary-key="true" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_birthYear" property="birthYear" behavior="readwrite" uniqueId="b814cdca-4fbe-4b48-9ab9-81824e1ac9c8" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="birthYear" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_birthMonth" property="birthMonth" behavior="readwrite" uniqueId="fd770633-f41d-49fb-b057-0c0d417243bb" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="birthMonth" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_birthDay" property="birthDay" behavior="readwrite" uniqueId="d8cd69b4-0c7c-432d-af34-72d0d7afbeb1" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="birthDay" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_birthCountry" property="birthCountry" behavior="readwrite" uniqueId="5bfaafd0-011d-463b-9388-a53de6e541ec" type="System.String">
+          <orm:column name="birthCountry" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_birthState" property="birthState" behavior="readwrite" uniqueId="943785eb-c4c2-41b2-92f7-96905dd5e0d7" type="System.String">
+          <orm:column name="birthState" sql-type="nvarchar" nullable="true" length="2" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_birthCity" property="birthCity" behavior="readwrite" uniqueId="4a2bfe8c-2a7c-4754-8270-ca4ac8e05299" type="System.String">
+          <orm:column name="birthCity" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_deathYear" property="deathYear" behavior="readwrite" uniqueId="59320902-704f-43d6-b200-30a2602393af" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="deathYear" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_deathMonth" property="deathMonth" behavior="readwrite" uniqueId="cc91ab7f-3dbb-4608-b8df-4175f7cc325f" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="deathMonth" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_deathDay" property="deathDay" behavior="readwrite" uniqueId="1728779f-1958-40c7-9040-d706d38fde84" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="deathDay" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_deathCountry" property="deathCountry" behavior="readwrite" uniqueId="a1b24a8c-8bb6-403d-97dc-593fb967bcde" type="System.String">
+          <orm:column name="deathCountry" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_deathState" property="deathState" behavior="readwrite" uniqueId="70f87aff-716f-429e-867e-d098d9d3e083" type="System.String">
+          <orm:column name="deathState" sql-type="nvarchar" nullable="true" length="2" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_deathCity" property="deathCity" behavior="readwrite" uniqueId="12714510-4bdb-41c3-b518-3093c1c66a3a" type="System.String">
+          <orm:column name="deathCity" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_nameFirst" property="nameFirst" behavior="readwrite" uniqueId="cbb6837d-b79f-4a2a-8b2b-2a4c78a8b78b" type="System.String">
+          <orm:column name="nameFirst" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_nameLast" property="nameLast" behavior="readwrite" uniqueId="934a6a3b-023c-4adb-b058-d207eae40a93" type="System.String">
+          <orm:column name="nameLast" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_nameGiven" property="nameGiven" behavior="readwrite" uniqueId="878ed52f-f8bd-4ee9-8329-59fad4f6acd6" type="System.String">
+          <orm:column name="nameGiven" sql-type="nvarchar" nullable="true" length="255" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_weight" property="weight" behavior="readwrite" uniqueId="f135d8eb-2fbf-489e-a30b-0a5ad7ef2f63" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="weight" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_height" property="height" behavior="readwrite" uniqueId="4a9a527d-6c62-4206-b38f-26052c92c874" type="System.Nullable`1[[System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="height" sql-type="float" nullable="true" length="0" scale="0" ado-type="Double" />
+        </orm:field>
+        <orm:field name="_bats" property="bats" behavior="readwrite" uniqueId="1023bb21-d2ef-4439-a4ea-78f74bb7af0f" type="System.String">
+          <orm:column name="bats" sql-type="nvarchar" nullable="true" length="1" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_throws" property="throws" behavior="readwrite" uniqueId="ae326aee-6eb4-4344-bbd0-9cf2f9ce0aa0" type="System.String">
+          <orm:column name="throws" sql-type="nvarchar" nullable="true" length="1" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_debut" property="debut" behavior="readwrite" uniqueId="3c9bf430-1aef-4e55-a5bb-6bf9e4fdb0c8" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="debut" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_finalGame" property="finalGame" behavior="readwrite" uniqueId="2c2f5770-b0f5-4488-80f7-90dc9f15b924" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="finalGame" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_retroID" property="retroID" behavior="readwrite" uniqueId="bc5ad278-34fd-499e-a8bc-120a71cd81e4" type="System.String">
+          <orm:column name="retroID" sql-type="nvarchar" nullable="true" length="9" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_bbrefID" property="bbrefID" behavior="readwrite" uniqueId="2888f5d0-b793-4ed0-9979-b91eba79d26a" type="System.String">
+          <orm:column name="bbrefID" sql-type="nvarchar" nullable="true" length="9" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_Appearances" property="Appearances" behavior="readwrite" uniqueId="1fe8ec92-ef8b-497a-b255-1b56849833b7" type="oDataModel.Appearance">
+          <orm:collection element-class="oDataModel.Appearance" inverse-field="_Master" order-by="" uniqueId="b2731d3c-c630-484a-95fa-a26e5b1cfe6f" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Appearance" uniqueId="24910fa1-80b8-4995-b2f5-7bc445477888">
+        <orm:table name="Appearances" />
+        <orm:identity>
+          <orm:multiple-field>
+            <orm:single-field field-name="_yearID" />
+            <orm:single-field field-name="_teamID" />
+            <orm:single-field field-name="_playerID" />
+          </orm:multiple-field>
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_yearID" property="yearID" behavior="readwrite" uniqueId="b721834c-bee4-4165-a7a5-ed3089e61443" type="System.Int16">
+          <orm:column name="yearID" sql-type="smallint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_teamID" property="teamID" behavior="readwrite" uniqueId="f0ac3be8-bc3c-43c8-985a-e03131164785" type="System.String">
+          <orm:column name="teamID" sql-type="nvarchar" nullable="false" length="3" scale="0" primary-key="true" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_lgID" property="lgID" behavior="readwrite" uniqueId="3bdcdcd1-f475-4a8f-8355-6f35d76e46d6" type="System.String">
+          <orm:column name="lgID" sql-type="nvarchar" nullable="true" length="2" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_playerID" property="playerID" behavior="readwrite" uniqueId="904cae2f-3a33-41b4-b8e5-dd3323580003" type="System.String">
+          <orm:column name="playerID" sql-type="nvarchar" nullable="false" length="10" scale="0" primary-key="true" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_G_all" property="G_all" behavior="readwrite" uniqueId="fe6eb97a-cf1c-4f88-a925-75e5b90b2f0b" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="G_all" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_GS" property="GS" behavior="readwrite" uniqueId="9404cc9d-4de9-476c-a612-e23994abc522" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="GS" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_G_batting" property="G_batting" behavior="readwrite" uniqueId="9f6df7cc-5f10-4a10-a025-da2e4696debb" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="G_batting" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_G_defense" property="G_defense" behavior="readwrite" uniqueId="26ef2d9d-7359-45b2-a10c-f92f83dfac8d" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="G_defense" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_G_p" property="G_p" behavior="readwrite" uniqueId="38acac10-d374-4a07-875d-29aa819e07ab" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="G_p" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_G_c" property="G_c" behavior="readwrite" uniqueId="dc8e10d0-5a93-48f7-8205-4aaf753c359e" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="G_c" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_G_1b" property="G_1b" behavior="readwrite" uniqueId="3a1871dc-0ad7-49fd-9ac9-ad964034c997" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="G_1b" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_G_2b" property="G_2b" behavior="readwrite" uniqueId="f8a0eb4e-fe84-4c23-8889-1e39a6554145" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="G_2b" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_G_3b" property="G_3b" behavior="readwrite" uniqueId="283213d3-ffd1-4b5f-b17c-742f3917f736" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="G_3b" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_G_ss" property="G_ss" behavior="readwrite" uniqueId="784f183f-9e97-4207-a4b3-313287b5defb" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="G_ss" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_G_lf" property="G_lf" behavior="readwrite" uniqueId="5d54b68c-f5ab-4ed9-9b0c-28aa73bac5b3" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="G_lf" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_G_cf" property="G_cf" behavior="readwrite" uniqueId="8fab477f-722c-48e5-8100-bc7edde5f131" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="G_cf" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_G_rf" property="G_rf" behavior="readwrite" uniqueId="762d5962-8c8e-441d-b4f2-203b628e03b7" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="G_rf" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_G_of" property="G_of" behavior="readwrite" uniqueId="1ea968cf-6ced-4f27-883a-d50c8c61e6ad" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="G_of" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_G_dh" property="G_dh" behavior="readwrite" uniqueId="edc5db1f-a273-4182-9e59-e94b9522dd5b" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="G_dh" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_G_ph" property="G_ph" behavior="readwrite" uniqueId="5cc20875-6065-42bf-af49-d24c80d8950e" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="G_ph" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_G_pr" property="G_pr" behavior="readwrite" uniqueId="10292209-3ed6-45ff-bb56-e17b3fd134cd" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="G_pr" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_teamIDyearID" property="teamIDyearID" behavior="readwrite" uniqueId="26041ef4-a7f3-461a-9186-0d3f7ba325e9" type="System.String">
+          <orm:column name="teamIDyearID" sql-type="nvarchar" nullable="false" length="9" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_Master" property="Master" behavior="readwrite" uniqueId="5c958e7a-abec-42b3-a2a5-375bfb2e414d" type="oDataModel.Master">
+          <orm:reference uniqueId="b2731d3c-c630-484a-95fa-a26e5b1cfe6f" association-name="AppearanceHasMaster">
+            <orm:column name="playerID" sql-type="nvarchar" nullable="false" length="10" scale="0" primary-key="true" ado-type="UnicodeStringVariableLength" target-table="'Master'" target-column="playerID" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_Team" property="Team" behavior="readwrite" uniqueId="8dac4067-d355-4864-8172-ca220eb79279" type="oDataModel.Team">
+          <orm:reference uniqueId="5a86438e-561e-474b-bf45-8f90350aea13" association-name="AppearanceHasTeam">
+            <orm:column name="yearID" sql-type="smallint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int16" target-table="'Teams'" target-column="yearID" />
+            <orm:column name="teamID" sql-type="nvarchar" nullable="false" length="3" scale="0" primary-key="true" ado-type="UnicodeStringVariableLength" target-table="'Teams'" target-column="teamID" />
+          </orm:reference>
+        </orm:field>
+      </orm:class>
+      <orm:class name="vTeam" uniqueId="7a71cdaf-7312-44e5-89a3-2a8dcd4b8bb1">
+        <orm:table name="vTeams" schema="oData" view="true" />
+        <orm:identity>
+          <orm:single-field field-name="_teamID" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_teamID" property="teamID" behavior="readwrite" uniqueId="1edec368-9eff-45e5-9dff-0397f2809f74" type="System.String">
+          <orm:column name="teamID" sql-type="nvarchar" nullable="false" length="3" scale="0" primary-key="true" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_name" property="name" behavior="readwrite" uniqueId="59630e1f-914f-4334-b2ca-db434c4932e0" type="System.String">
+          <orm:column name="name" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_MAXRank" property="MAXRank" behavior="readwrite" uniqueId="06a24ad4-e3ed-4ed8-b85f-4cf9fb63673e" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="MAX Rank" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="vTeams_by_Year" uniqueId="f1daecb3-e1a5-43dc-85c3-e58830bd4112">
+        <orm:table name="vTeams_by_Year" schema="oData" view="true" />
+        <orm:identity>
+          <orm:multiple-field>
+            <orm:single-field field-name="_yearID" />
+            <orm:single-field field-name="_teamID" />
+          </orm:multiple-field>
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_yearID" property="yearID" behavior="readwrite" uniqueId="9eded60c-b8e7-46d5-ae45-347a2a87f578" type="System.Int16">
+          <orm:column name="yearID" sql-type="smallint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_teamID" property="teamID" behavior="readwrite" uniqueId="d1d2fe2c-cf3c-4027-9a60-a0aa5a81d30d" type="System.String">
+          <orm:column name="teamID" sql-type="nvarchar" nullable="false" length="3" scale="0" primary-key="true" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_Rank" property="Rank" behavior="readwrite" uniqueId="ae7ec37a-000c-4271-912a-def3f506b320" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="Rank" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_teamIDyearID" property="teamIDyearID" behavior="readwrite" uniqueId="18ec18e3-1307-4b8c-b1c3-e81d3d9d7a90" type="System.String">
+          <orm:column name="teamIDyearID" sql-type="nvarchar" nullable="false" length="9" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="vSalaries_by_Year" uniqueId="73b58346-426a-4d19-a8e7-6b0b4741a9b6">
+        <orm:table name="vSalaries_by_Year" schema="oData" view="true" />
+        <orm:identity>
+          <orm:multiple-field>
+            <orm:single-field field-name="_yearID" />
+            <orm:single-field field-name="_teamID" />
+            <orm:single-field field-name="_playerID" />
+            <orm:single-field field-name="_lgID" />
+          </orm:multiple-field>
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_yearID" property="yearID" behavior="readwrite" uniqueId="1119926f-0059-4cda-a952-d61af77fd23f" type="System.Int16">
+          <orm:column name="yearID" sql-type="smallint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_teamIDyearID" property="teamIDyearID" behavior="readwrite" uniqueId="2b55e559-ce59-424c-b459-96337d8e3094" type="System.String">
+          <orm:column name="teamIDyearID" sql-type="nvarchar" nullable="false" length="9" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_teamID" property="teamID" behavior="readwrite" uniqueId="1ff3a1f6-53ed-4f13-b235-dc0430e1edaa" type="System.String">
+          <orm:column name="teamID" sql-type="nvarchar" nullable="false" length="3" scale="0" primary-key="true" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_salary" property="salary" behavior="readwrite" uniqueId="d572f70b-8a06-488a-be05-c96245c50764" type="System.Nullable`1[[System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="salary" sql-type="float" nullable="true" length="0" scale="0" ado-type="Double" />
+        </orm:field>
+        <orm:field name="_playerID" property="playerID" behavior="readwrite" uniqueId="69aaea0b-f462-4ebb-b93f-46abb9ce086b" type="System.String">
+          <orm:column name="playerID" sql-type="nvarchar" nullable="false" length="10" scale="0" primary-key="true" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_nameGiven" property="nameGiven" behavior="readwrite" uniqueId="43bd6b59-be5a-4012-b0ad-fd0d879030c4" type="System.String">
+          <orm:column name="nameGiven" sql-type="nvarchar" nullable="true" length="255" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_lgID" property="lgID" behavior="readwrite" uniqueId="3c752295-2abd-49de-922d-3e54d785b3cd" type="System.String">
+          <orm:column name="lgID" sql-type="nvarchar" nullable="true" length="2" scale="0" primary-key="true" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_G_all" property="G_all" behavior="readwrite" uniqueId="784c84e1-1fc5-4fe8-80bb-df2254f7e7d7" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="G_all" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_fullName" property="fullName" behavior="readwrite" uniqueId="6f83fa82-8fad-40f5-981c-cc9ea8a475d8" type="System.String">
+          <orm:column name="fullName" sql-type="nvarchar" nullable="false" length="101" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+      </orm:class>
+    </orm:namespace>
+    <orm:schema schema="">
+      <orm:table name="Teams">
+        <orm:column name="yearID" sql-type="smallint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int16" />
+        <orm:column name="lgID" sql-type="nvarchar" nullable="false" length="2" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="teamID" sql-type="nvarchar" nullable="false" length="3" scale="0" primary-key="true" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="franchID" sql-type="nvarchar" nullable="false" length="3" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="divID" sql-type="nvarchar" nullable="true" length="1" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="Rank" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="G" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="Ghome" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="W" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="L" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="DivWin" sql-type="nvarchar" nullable="true" length="1" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="WCWin" sql-type="nvarchar" nullable="true" length="1" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="LgWin" sql-type="nvarchar" nullable="true" length="1" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="WSWin" sql-type="nvarchar" nullable="true" length="1" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="R" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="AB" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="H" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="2B" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="3B" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="HR" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="BB" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="SO" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="SB" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="CS" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="HBP" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="SF" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="RA" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="ER" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="ERA" sql-type="float" nullable="true" length="0" scale="0" ado-type="Double" />
+        <orm:column name="CG" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="SHO" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="SV" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="IPouts" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="HA" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="HRA" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="BBA" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="SOA" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="E" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="DP" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="FP" sql-type="float" nullable="true" length="0" scale="0" ado-type="Double" />
+        <orm:column name="name" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="park" sql-type="nvarchar" nullable="true" length="255" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="attendance" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="BPF" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="PPF" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="teamIDBR" sql-type="nvarchar" nullable="true" length="3" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="teamIDlahman45" sql-type="nvarchar" nullable="true" length="3" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="teamIDretro" sql-type="nvarchar" nullable="true" length="3" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="teamIDyearID" sql-type="nvarchar" nullable="false" length="9" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:index name="UK_Teams" unique="true">
+          <orm:columnMapping>
+            <orm:column name="teamIDyearID" sql-type="nvarchar" nullable="false" length="9" scale="0" ado-type="UnicodeStringVariableLength" />
+          </orm:columnMapping>
+        </orm:index>
+      </orm:table>
+      <orm:table name="Master">
+        <orm:column name="playerID" sql-type="nvarchar" nullable="false" length="10" scale="0" primary-key="true" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="birthYear" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="birthMonth" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="birthDay" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="birthCountry" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="birthState" sql-type="nvarchar" nullable="true" length="2" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="birthCity" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="deathYear" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="deathMonth" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="deathDay" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="deathCountry" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="deathState" sql-type="nvarchar" nullable="true" length="2" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="deathCity" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="nameFirst" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="nameLast" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="nameGiven" sql-type="nvarchar" nullable="true" length="255" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="weight" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="height" sql-type="float" nullable="true" length="0" scale="0" ado-type="Double" />
+        <orm:column name="bats" sql-type="nvarchar" nullable="true" length="1" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="throws" sql-type="nvarchar" nullable="true" length="1" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="debut" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="finalGame" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="retroID" sql-type="nvarchar" nullable="true" length="9" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="bbrefID" sql-type="nvarchar" nullable="true" length="9" scale="0" ado-type="UnicodeStringVariableLength" />
+      </orm:table>
+      <orm:table name="Appearances">
+        <orm:column name="yearID" sql-type="smallint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int16" />
+        <orm:column name="teamID" sql-type="nvarchar" nullable="false" length="3" scale="0" primary-key="true" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="lgID" sql-type="nvarchar" nullable="true" length="2" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="playerID" sql-type="nvarchar" nullable="false" length="10" scale="0" primary-key="true" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="G_all" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="GS" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="G_batting" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="G_defense" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="G_p" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="G_c" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="G_1b" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="G_2b" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="G_3b" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="G_ss" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="G_lf" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="G_cf" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="G_rf" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="G_of" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="G_dh" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="G_ph" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="G_pr" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="teamIDyearID" sql-type="nvarchar" nullable="false" length="9" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:constraint name="FK_Appearances_Master" delete-action="dbdefaultrule" destination-table="Master">
+          <orm:column name="playerID" sql-type="nvarchar" nullable="false" length="10" scale="0" primary-key="true" ado-type="UnicodeStringVariableLength" />
+        </orm:constraint>
+      </orm:table>
+    </orm:schema>
+    <orm:schema schema="oData">
+      <orm:table name="vTeams" schema="oData" view="true">
+        <orm:column name="teamID" sql-type="nvarchar" nullable="false" length="3" scale="0" primary-key="true" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="name" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="MAX Rank" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+      </orm:table>
+      <orm:table name="vTeams_by_Year" schema="oData" view="true">
+        <orm:column name="yearID" sql-type="smallint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int16" />
+        <orm:column name="teamID" sql-type="nvarchar" nullable="false" length="3" scale="0" primary-key="true" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="Rank" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="teamIDyearID" sql-type="nvarchar" nullable="false" length="9" scale="0" ado-type="UnicodeStringVariableLength" />
+      </orm:table>
+      <orm:table name="vSalaries_by_Year" schema="oData" view="true">
+        <orm:column name="yearID" sql-type="smallint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int16" />
+        <orm:column name="teamIDyearID" sql-type="nvarchar" nullable="false" length="9" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="teamID" sql-type="nvarchar" nullable="false" length="3" scale="0" primary-key="true" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="salary" sql-type="float" nullable="true" length="0" scale="0" ado-type="Double" />
+        <orm:column name="playerID" sql-type="nvarchar" nullable="false" length="10" scale="0" primary-key="true" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="nameGiven" sql-type="nvarchar" nullable="true" length="255" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="lgID" sql-type="nvarchar" nullable="true" length="2" scale="0" primary-key="true" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="G_all" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="fullName" sql-type="nvarchar" nullable="false" length="101" scale="0" ado-type="UnicodeStringVariableLength" />
+      </orm:table>
+    </orm:schema>
+    <orm:relational-naming-settings>
+      <orm:source-strategy>Property</orm:source-strategy>
+      <orm:remove-camel-case>False</orm:remove-camel-case>
+    </orm:relational-naming-settings>
+  </orm:orm>
+  <ModelSettings xmlns="">
+    <AppConfigConnectionPropertyName>LahmanConnection</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>data source=lahman.cis9zkc7rfcj.us-east-1.rds.amazonaws.com;initial catalog=Lahman;persist security info=True;user id=davidem;password=Lepanto1571</AppConfigConnectionString>
+    <InitialCatalog>Lahman</InitialCatalog>
+    <NamingSettings>
+      <ClassRules>
+        <PluralizationMode>Singularize</PluralizationMode>
+      </ClassRules>
+      <FieldRules>
+        <AddPrefix>_</AddPrefix>
+      </FieldRules>
+      <PropertyRules />
+      <NavigationPropertyRules>
+        <IsPrefixSuffixEnabled>false</IsPrefixSuffixEnabled>
+      </NavigationPropertyRules>
+    </NamingSettings>
+    <CodeGenerationSettings>
+      <MappingDefinitionType>Xml</MappingDefinitionType>
+    </CodeGenerationSettings>
+    <SchemaUpdateSettings />
+    <BackendConfigurationSettings>
+      <BackendConfiguration>
+        <Backend>MsSql</Backend>
+        <ProviderName>System.Data.SqlClient</ProviderName>
+      </BackendConfiguration>
+    </BackendConfigurationSettings>
+  </ModelSettings>
+  <Types>
+    <DomainClass Id="b150e994-d200-4ec9-bc64-ff0f1765f88f" name="Team" namespace="oDataModel" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="de99d4e9-ddf3-46da-91ad-049323b6dd6a" name="franchID" label="franchID : String" kind="Persistent" fieldName="_franchID" />
+      <Property Id="372870a8-04df-434b-a32e-bd1b109610d6" name="lgID" label="lgID : String" kind="Persistent" fieldName="_lgID" />
+      <Property Id="5bf9372c-9e1c-478f-b9a4-18ed9bbb91d2" name="teamID" label="teamID : String" kind="Persistent" identity="true" fieldName="_teamID" />
+      <Property Id="9ad916a6-9161-4edc-a0af-39a8215a1012" name="yearID" type="Int16" label="yearID : Int16" kind="Persistent" identity="true" fieldName="_yearID" />
+      <Property Id="038bbe62-7344-41d4-a7d0-86fbb5a31eb8" name="F_2B" type="Int16" label="F_2B : Int16" nullable="true" kind="Persistent" fieldName="_F_2B" />
+      <Property Id="148e7c37-fe36-4673-9761-7304ab0c987f" name="F_3B" type="Int16" label="F_3B : Int16" nullable="true" kind="Persistent" fieldName="_F_3B" />
+      <Property Id="d72a2ddc-1efe-49e8-bef7-202f95fa4584" name="AB" type="Int16" label="AB : Int16" nullable="true" kind="Persistent" fieldName="_AB" />
+      <Property Id="339d934f-3413-493c-8436-82d58ced7ca9" name="attendance" type="Int32" label="attendance : Int32" nullable="true" kind="Persistent" fieldName="_attendance" />
+      <Property Id="c0d60d3b-20a4-4ba4-9a7c-410c2e3c3aa1" name="BB" type="Int16" label="BB : Int16" nullable="true" kind="Persistent" fieldName="_BB" />
+      <Property Id="6f5b1624-acf9-4b10-9cfb-749a2d9b4488" name="BBA" type="Int16" label="BBA : Int16" nullable="true" kind="Persistent" fieldName="_BBA" />
+      <Property Id="01035909-0364-4772-9ed6-539ede078893" name="BPF" type="Int32" label="BPF : Int32" nullable="true" kind="Persistent" fieldName="_BPF" />
+      <Property Id="11827793-615d-41fa-b044-7730db3b7389" name="CG" type="Int16" label="CG : Int16" nullable="true" kind="Persistent" fieldName="_CG" />
+      <Property Id="fe05caa4-8489-4dad-84e0-9e9267a5d868" name="CS" type="Int16" label="CS : Int16" nullable="true" kind="Persistent" fieldName="_CS" />
+      <Property Id="36946e0b-cb91-429a-88d8-8f2ab186a0fe" name="divID" label="divID : String" nullable="true" kind="Persistent" fieldName="_divID" />
+      <Property Id="66fc217b-c617-4518-9bdf-5fcb9edb4e95" name="DivWin" label="DivWin : String" nullable="true" kind="Persistent" fieldName="_DivWin" />
+      <Property Id="c2bf3f0d-20bf-4883-aad3-e1fd45727eed" name="DP" type="Int32" label="DP : Int32" nullable="true" kind="Persistent" fieldName="_DP" />
+      <Property Id="06b6a9da-8f75-431a-8572-2cc76b06895e" name="E" type="Int32" label="E : Int32" nullable="true" kind="Persistent" fieldName="_E" />
+      <Property Id="7528f419-ffcb-4de3-92fa-830a4db59b41" name="ER" type="Int16" label="ER : Int16" nullable="true" kind="Persistent" fieldName="_ER" />
+      <Property Id="413153dd-9faa-4fc9-a934-757e6597579d" name="ERA" type="Double" label="ERA : Double" nullable="true" kind="Persistent" fieldName="_ERA" />
+      <Property Id="1effdf02-9ee4-491e-963e-77cc1aef631d" name="FP" type="Double" label="FP : Double" nullable="true" kind="Persistent" fieldName="_FP" />
+      <Property Id="96bac5e6-2149-4f30-8c21-8203223f284d" name="G" type="Int16" label="G : Int16" nullable="true" kind="Persistent" fieldName="_G" />
+      <Property Id="4e9ab4bd-64c0-41a5-aa0c-80466fc2857e" name="Ghome" type="Int16" label="Ghome : Int16" nullable="true" kind="Persistent" fieldName="_Ghome" />
+      <Property Id="656b6f69-db20-47be-871b-a0d4c14fb5f5" name="H" type="Int16" label="H : Int16" nullable="true" kind="Persistent" fieldName="_H" />
+      <Property Id="f429aa97-e5de-4536-80e0-08deb5c8bdf8" name="HA" type="Int16" label="HA : Int16" nullable="true" kind="Persistent" fieldName="_HA" />
+      <Property Id="1d471087-9c7d-4f52-b135-56b033b8caca" name="HBP" type="Int16" label="HBP : Int16" nullable="true" kind="Persistent" fieldName="_HBP" />
+      <Property Id="36e1f005-5828-44fd-8267-9e07f1aa90da" name="HR" type="Int16" label="HR : Int16" nullable="true" kind="Persistent" fieldName="_HR" />
+      <Property Id="8195fd29-ae75-409a-938f-27cc14677f3e" name="HRA" type="Int16" label="HRA : Int16" nullable="true" kind="Persistent" fieldName="_HRA" />
+      <Property Id="968147ae-3618-411f-88f5-f23eb6e4ec5a" name="IPouts" type="Int32" label="IPouts : Int32" nullable="true" kind="Persistent" fieldName="_IPouts" />
+      <Property Id="f0c88379-96bb-44ba-9abe-11505736cf18" name="L" type="Int16" label="L : Int16" nullable="true" kind="Persistent" fieldName="_L" />
+      <Property Id="c39337bd-009b-44d4-9fb8-c8ae3489b2e2" name="LgWin" label="LgWin : String" nullable="true" kind="Persistent" fieldName="_LgWin" />
+      <Property Id="eb2f87e5-2f0d-4efe-8947-8723adf680db" name="name" label="name : String" kind="Persistent" fieldName="_name" />
+      <Property Id="db8ae1c0-5ce8-4e9e-a699-73e30e754759" name="park" label="park : String" kind="Persistent" fieldName="_park" />
+      <Property Id="a604c8c5-8b37-401b-b566-b235d9109b8c" name="PPF" type="Int32" label="PPF : Int32" nullable="true" kind="Persistent" fieldName="_PPF" />
+      <Property Id="e30d2618-c1b4-4447-85e7-768e26f0e60e" name="R" type="Int16" label="R : Int16" nullable="true" kind="Persistent" fieldName="_R" />
+      <Property Id="48b88296-50ea-4393-bf46-81870c27b7b1" name="RA" type="Int16" label="RA : Int16" nullable="true" kind="Persistent" fieldName="_RA" />
+      <Property Id="512e69dc-3b38-43de-9c30-e917f54fd9f1" name="Rank" type="Int16" label="Rank : Int16" nullable="true" kind="Persistent" fieldName="_Rank" />
+      <Property Id="ac654c80-166e-45e5-818b-67eeb7587b91" name="SB" type="Int16" label="SB : Int16" nullable="true" kind="Persistent" fieldName="_SB" />
+      <Property Id="5c599426-68f5-48f6-a163-75d72fa1f5c2" name="SF" type="Int16" label="SF : Int16" nullable="true" kind="Persistent" fieldName="_SF" />
+      <Property Id="9bc9931c-04be-45de-b65f-3cb9a1d9ac08" name="SHO" type="Int16" label="SHO : Int16" nullable="true" kind="Persistent" fieldName="_SHO" />
+      <Property Id="02625030-bdee-4780-a2a2-15b6de58fc43" name="SO" type="Int16" label="SO : Int16" nullable="true" kind="Persistent" fieldName="_SO" />
+      <Property Id="9a9d193c-b3f0-4ba3-8574-4251c9a95fab" name="SOA" type="Int16" label="SOA : Int16" nullable="true" kind="Persistent" fieldName="_SOA" />
+      <Property Id="6efda094-0fa9-477d-b9a3-17a28b9c7698" name="SV" type="Int16" label="SV : Int16" nullable="true" kind="Persistent" fieldName="_SV" />
+      <Property Id="8229d66d-766b-4bed-a7fe-6d9400655391" name="teamIDBR" label="teamIDBR : String" kind="Persistent" fieldName="_teamIDBR" />
+      <Property Id="ec3886e3-fe38-4972-afb9-983ba6744234" name="teamIDlahman45" label="teamIDlahman45 : String" kind="Persistent" fieldName="_teamIDlahman45" />
+      <Property Id="dd5b981d-3450-48b7-b9cf-febe1046a39c" name="teamIDretro" label="teamIDretro : String" kind="Persistent" fieldName="_teamIDretro" />
+      <Property Id="06018e85-18f0-40ec-91e2-06e318808767" name="W" type="Int16" label="W : Int16" nullable="true" kind="Persistent" fieldName="_W" />
+      <Property Id="6caa5ff8-41d5-4ceb-a9da-a0475e7c872f" name="WCWin" label="WCWin : String" nullable="true" kind="Persistent" fieldName="_WCWin" />
+      <Property Id="9407d702-44cf-42db-b226-639017340c04" name="WSWin" label="WSWin : String" nullable="true" kind="Persistent" fieldName="_WSWin" />
+      <Property Id="41e7dcaf-b100-4fed-8bc1-fa38887340c4" name="teamIDyearID" label="teamIDyearID : String" kind="Persistent" fieldName="_teamIDyearID" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="543f8276-e198-4841-b6c5-9ba520e59933">
+          <NavigationalProperty Id="5ab92cb0-43b5-43b7-beed-ef7635acffe8" name="Appearances" type="IList&lt;Appearance&gt;" label="Appearances : IList&lt;Appearance&gt;" nullable="true" kind="Persistent" fieldName="_Appearances" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="a65d9b59-ac5f-45de-9614-59be4800cb7f" name="Master" namespace="oDataModel" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="eddd67b8-4414-4226-bddd-5ad99ec607fb" name="playerID" label="playerID : String" kind="Persistent" identity="true" fieldName="_playerID" />
+      <Property Id="1023bb21-d2ef-4439-a4ea-78f74bb7af0f" name="bats" label="bats : String" nullable="true" kind="Persistent" fieldName="_bats" />
+      <Property Id="2888f5d0-b793-4ed0-9979-b91eba79d26a" name="bbrefID" label="bbrefID : String" kind="Persistent" fieldName="_bbrefID" />
+      <Property Id="4a2bfe8c-2a7c-4754-8270-ca4ac8e05299" name="birthCity" label="birthCity : String" kind="Persistent" fieldName="_birthCity" />
+      <Property Id="5bfaafd0-011d-463b-9388-a53de6e541ec" name="birthCountry" label="birthCountry : String" kind="Persistent" fieldName="_birthCountry" />
+      <Property Id="d8cd69b4-0c7c-432d-af34-72d0d7afbeb1" name="birthDay" type="Int16" label="birthDay : Int16" nullable="true" kind="Persistent" fieldName="_birthDay" />
+      <Property Id="fd770633-f41d-49fb-b057-0c0d417243bb" name="birthMonth" type="Int16" label="birthMonth : Int16" nullable="true" kind="Persistent" fieldName="_birthMonth" />
+      <Property Id="943785eb-c4c2-41b2-92f7-96905dd5e0d7" name="birthState" label="birthState : String" kind="Persistent" fieldName="_birthState" />
+      <Property Id="b814cdca-4fbe-4b48-9ab9-81824e1ac9c8" name="birthYear" type="Int16" label="birthYear : Int16" nullable="true" kind="Persistent" fieldName="_birthYear" />
+      <Property Id="12714510-4bdb-41c3-b518-3093c1c66a3a" name="deathCity" label="deathCity : String" kind="Persistent" fieldName="_deathCity" />
+      <Property Id="a1b24a8c-8bb6-403d-97dc-593fb967bcde" name="deathCountry" label="deathCountry : String" kind="Persistent" fieldName="_deathCountry" />
+      <Property Id="1728779f-1958-40c7-9040-d706d38fde84" name="deathDay" type="Int16" label="deathDay : Int16" nullable="true" kind="Persistent" fieldName="_deathDay" />
+      <Property Id="cc91ab7f-3dbb-4608-b8df-4175f7cc325f" name="deathMonth" type="Int16" label="deathMonth : Int16" nullable="true" kind="Persistent" fieldName="_deathMonth" />
+      <Property Id="70f87aff-716f-429e-867e-d098d9d3e083" name="deathState" label="deathState : String" kind="Persistent" fieldName="_deathState" />
+      <Property Id="59320902-704f-43d6-b200-30a2602393af" name="deathYear" type="Int16" label="deathYear : Int16" nullable="true" kind="Persistent" fieldName="_deathYear" />
+      <Property Id="3c9bf430-1aef-4e55-a5bb-6bf9e4fdb0c8" name="debut" type="DateTime" label="debut : DateTime" nullable="true" kind="Persistent" fieldName="_debut" />
+      <Property Id="2c2f5770-b0f5-4488-80f7-90dc9f15b924" name="finalGame" type="DateTime" label="finalGame : DateTime" nullable="true" kind="Persistent" fieldName="_finalGame" />
+      <Property Id="4a9a527d-6c62-4206-b38f-26052c92c874" name="height" type="Double" label="height : Double" nullable="true" kind="Persistent" fieldName="_height" />
+      <Property Id="cbb6837d-b79f-4a2a-8b2b-2a4c78a8b78b" name="nameFirst" label="nameFirst : String" kind="Persistent" fieldName="_nameFirst" />
+      <Property Id="878ed52f-f8bd-4ee9-8329-59fad4f6acd6" name="nameGiven" label="nameGiven : String" kind="Persistent" fieldName="_nameGiven" />
+      <Property Id="934a6a3b-023c-4adb-b058-d207eae40a93" name="nameLast" label="nameLast : String" kind="Persistent" fieldName="_nameLast" />
+      <Property Id="bc5ad278-34fd-499e-a8bc-120a71cd81e4" name="retroID" label="retroID : String" kind="Persistent" fieldName="_retroID" />
+      <Property Id="ae326aee-6eb4-4344-bbd0-9cf2f9ce0aa0" name="throws" label="throws : String" nullable="true" kind="Persistent" fieldName="_throws" />
+      <Property Id="f135d8eb-2fbf-489e-a30b-0a5ad7ef2f63" name="weight" type="Int16" label="weight : Int16" nullable="true" kind="Persistent" fieldName="_weight" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="979e1889-ac0c-4537-887a-e046e724bd3a">
+          <NavigationalProperty Id="1fe8ec92-ef8b-497a-b255-1b56849833b7" name="Appearances" type="IList&lt;Appearance&gt;" label="Appearances : IList&lt;Appearance&gt;" nullable="true" kind="Persistent" fieldName="_Appearances" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="24910fa1-80b8-4995-b2f5-7bc445477888" name="Appearance" namespace="oDataModel" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="904cae2f-3a33-41b4-b8e5-dd3323580003" name="playerID" label="playerID : String" kind="Persistent" identity="true" fieldName="_playerID" />
+      <Property Id="f0ac3be8-bc3c-43c8-985a-e03131164785" name="teamID" label="teamID : String" kind="Persistent" identity="true" fieldName="_teamID" />
+      <Property Id="b721834c-bee4-4165-a7a5-ed3089e61443" name="yearID" type="Int16" label="yearID : Int16" kind="Persistent" identity="true" fieldName="_yearID" />
+      <Property Id="3a1871dc-0ad7-49fd-9ac9-ad964034c997" name="G_1b" type="Int16" label="G_1b : Int16" nullable="true" kind="Persistent" fieldName="_G_1b" />
+      <Property Id="f8a0eb4e-fe84-4c23-8889-1e39a6554145" name="G_2b" type="Int16" label="G_2b : Int16" nullable="true" kind="Persistent" fieldName="_G_2b" />
+      <Property Id="283213d3-ffd1-4b5f-b17c-742f3917f736" name="G_3b" type="Int16" label="G_3b : Int16" nullable="true" kind="Persistent" fieldName="_G_3b" />
+      <Property Id="fe6eb97a-cf1c-4f88-a925-75e5b90b2f0b" name="G_all" type="Int16" label="G_all : Int16" nullable="true" kind="Persistent" fieldName="_G_all" />
+      <Property Id="9f6df7cc-5f10-4a10-a025-da2e4696debb" name="G_batting" type="Int16" label="G_batting : Int16" nullable="true" kind="Persistent" fieldName="_G_batting" />
+      <Property Id="dc8e10d0-5a93-48f7-8205-4aaf753c359e" name="G_c" type="Int16" label="G_c : Int16" nullable="true" kind="Persistent" fieldName="_G_c" />
+      <Property Id="8fab477f-722c-48e5-8100-bc7edde5f131" name="G_cf" type="Int16" label="G_cf : Int16" nullable="true" kind="Persistent" fieldName="_G_cf" />
+      <Property Id="26ef2d9d-7359-45b2-a10c-f92f83dfac8d" name="G_defense" type="Int16" label="G_defense : Int16" nullable="true" kind="Persistent" fieldName="_G_defense" />
+      <Property Id="edc5db1f-a273-4182-9e59-e94b9522dd5b" name="G_dh" type="Int16" label="G_dh : Int16" nullable="true" kind="Persistent" fieldName="_G_dh" />
+      <Property Id="5d54b68c-f5ab-4ed9-9b0c-28aa73bac5b3" name="G_lf" type="Int16" label="G_lf : Int16" nullable="true" kind="Persistent" fieldName="_G_lf" />
+      <Property Id="1ea968cf-6ced-4f27-883a-d50c8c61e6ad" name="G_of" type="Int16" label="G_of : Int16" nullable="true" kind="Persistent" fieldName="_G_of" />
+      <Property Id="38acac10-d374-4a07-875d-29aa819e07ab" name="G_p" type="Int16" label="G_p : Int16" nullable="true" kind="Persistent" fieldName="_G_p" />
+      <Property Id="5cc20875-6065-42bf-af49-d24c80d8950e" name="G_ph" type="Int16" label="G_ph : Int16" nullable="true" kind="Persistent" fieldName="_G_ph" />
+      <Property Id="10292209-3ed6-45ff-bb56-e17b3fd134cd" name="G_pr" type="Int16" label="G_pr : Int16" nullable="true" kind="Persistent" fieldName="_G_pr" />
+      <Property Id="762d5962-8c8e-441d-b4f2-203b628e03b7" name="G_rf" type="Int16" label="G_rf : Int16" nullable="true" kind="Persistent" fieldName="_G_rf" />
+      <Property Id="784f183f-9e97-4207-a4b3-313287b5defb" name="G_ss" type="Int16" label="G_ss : Int16" nullable="true" kind="Persistent" fieldName="_G_ss" />
+      <Property Id="9404cc9d-4de9-476c-a612-e23994abc522" name="GS" type="Int16" label="GS : Int16" nullable="true" kind="Persistent" fieldName="_GS" />
+      <Property Id="3bdcdcd1-f475-4a8f-8355-6f35d76e46d6" name="lgID" label="lgID : String" kind="Persistent" fieldName="_lgID" />
+      <Property Id="26041ef4-a7f3-461a-9186-0d3f7ba325e9" name="teamIDyearID" label="teamIDyearID : String" kind="Persistent" fieldName="_teamIDyearID" />
+      <AssociationTargets>
+        <Association Id="b2731d3c-c630-484a-95fa-a26e5b1cfe6f" SourceMultiplicity="ZeroOne" name="AppearanceHasMaster">
+          <DomainClassMoniker name="/EntitiesModel/Master" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="309b0727-2558-449e-ba13-24c2689b85c5">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Master/Appearances" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="fd409f81-7631-4ea0-b2c3-93741ff6d416">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Appearance/Master" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+        <Association Id="5a86438e-561e-474b-bf45-8f90350aea13" SourceMultiplicity="ZeroOne" name="AppearanceHasTeam">
+          <DomainClassMoniker name="/EntitiesModel/Team" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="db7ec1b7-613c-4134-a022-61a1eb0eb834">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Team/Appearances" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="848523a0-c2a1-42e8-8991-a7432ddcaf51">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Appearance/Team" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="dea4a327-ef24-40b4-82dd-12a1752f248f">
+          <NavigationalProperty Id="5c958e7a-abec-42b3-a2a5-375bfb2e414d" name="Master" type="Master" label="Master : Master" nullable="true" kind="Persistent" fieldName="_Master" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="0a03a8de-d95a-466b-be86-6dd9577b459a">
+          <NavigationalProperty Id="8dac4067-d355-4864-8172-ca220eb79279" name="Team" type="Team" label="Team : Team" nullable="true" kind="Persistent" fieldName="_Team" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="7a71cdaf-7312-44e5-89a3-2a8dcd4b8bb1" name="vTeam" namespace="oDataModel" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="06a24ad4-e3ed-4ed8-b85f-4cf9fb63673e" name="MAXRank" type="Int16" label="MAXRank : Int16" nullable="true" kind="Persistent" fieldName="_MAXRank" />
+      <Property Id="59630e1f-914f-4334-b2ca-db434c4932e0" name="name" label="name : String" kind="Persistent" fieldName="_name" />
+      <Property Id="1edec368-9eff-45e5-9dff-0397f2809f74" name="teamID" label="teamID : String" kind="Persistent" identity="true" fieldName="_teamID" />
+    </DomainClass>
+    <DomainClass Id="f1daecb3-e1a5-43dc-85c3-e58830bd4112" name="vTeams_by_Year" namespace="oDataModel" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="ae7ec37a-000c-4271-912a-def3f506b320" name="Rank" type="Int16" label="Rank : Int16" nullable="true" kind="Persistent" fieldName="_Rank" />
+      <Property Id="d1d2fe2c-cf3c-4027-9a60-a0aa5a81d30d" name="teamID" label="teamID : String" kind="Persistent" identity="true" fieldName="_teamID" />
+      <Property Id="9eded60c-b8e7-46d5-ae45-347a2a87f578" name="yearID" type="Int16" label="yearID : Int16" kind="Persistent" identity="true" fieldName="_yearID" />
+      <Property Id="18ec18e3-1307-4b8c-b1c3-e81d3d9d7a90" name="teamIDyearID" label="teamIDyearID : String" kind="Persistent" fieldName="_teamIDyearID" />
+    </DomainClass>
+    <DomainClass Id="73b58346-426a-4d19-a8e7-6b0b4741a9b6" name="vSalaries_by_Year" namespace="oDataModel" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="6f83fa82-8fad-40f5-981c-cc9ea8a475d8" name="fullName" label="fullName : String" kind="Persistent" fieldName="_fullName" />
+      <Property Id="784c84e1-1fc5-4fe8-80bb-df2254f7e7d7" name="G_all" type="Int16" label="G_all : Int16" nullable="true" kind="Persistent" fieldName="_G_all" />
+      <Property Id="3c752295-2abd-49de-922d-3e54d785b3cd" name="lgID" label="lgID : String" kind="Persistent" identity="true" fieldName="_lgID" />
+      <Property Id="43bd6b59-be5a-4012-b0ad-fd0d879030c4" name="nameGiven" label="nameGiven : String" kind="Persistent" fieldName="_nameGiven" />
+      <Property Id="69aaea0b-f462-4ebb-b93f-46abb9ce086b" name="playerID" label="playerID : String" kind="Persistent" identity="true" fieldName="_playerID" />
+      <Property Id="d572f70b-8a06-488a-be05-c96245c50764" name="salary" type="Double" label="salary : Double" nullable="true" kind="Persistent" fieldName="_salary" />
+      <Property Id="1ff3a1f6-53ed-4f13-b235-dc0430e1edaa" name="teamID" label="teamID : String" kind="Persistent" identity="true" fieldName="_teamID" />
+      <Property Id="2b55e559-ce59-424c-b459-96337d8e3094" name="teamIDyearID" label="teamIDyearID : String" kind="Persistent" fieldName="_teamIDyearID" />
+      <Property Id="1119926f-0059-4cda-a952-d61af77fd23f" name="yearID" type="Int16" label="yearID : Int16" kind="Persistent" identity="true" fieldName="_yearID" />
+    </DomainClass>
+  </Types>
+  <domainContext>
+    <domainModelHasDomainContext Id="fa4a4ad1-edf3-4bda-9981-202009323447">
+      <domainContainer name="EntitiesModel" namespace="oDataModel" showPropertiesCompartment="true">
+        <entitySetProperty name="Teams" namespace="oDataModel" type="Team" label="Teams : IQueryable&lt;oDataModel.Team&gt;" />
+        <entitySetProperty name="Masters" namespace="oDataModel" type="Master" label="Masters : IQueryable&lt;oDataModel.Master&gt;" />
+        <entitySetProperty name="Appearances" namespace="oDataModel" type="Appearance" label="Appearances : IQueryable&lt;oDataModel.Appearance&gt;" />
+        <entitySetProperty name="vTeams" namespace="oDataModel" type="vTeam" label="vTeams : IQueryable&lt;oDataModel.vTeam&gt;" />
+        <entitySetProperty name="vTeams_by_Years" namespace="oDataModel" type="vTeams_by_Year" label="vTeams_by_Years : IQueryable&lt;oDataModel.vTeams_by_Year&gt;" />
+        <entitySetProperty name="vSalaries_by_Years" namespace="oDataModel" type="vSalaries_by_Year" label="vSalaries_by_Years : IQueryable&lt;oDataModel.vSalaries_by_Year&gt;" />
+      </domainContainer>
+    </domainModelHasDomainContext>
+  </domainContext>
+</DomainModel>

@@ -1,0 +1,49 @@
+{
+  "settings": {
+    "currentPage": "index.html",
+    "versionFirst": "2.2",
+    "versionPublish": "2.2"
+  },
+  "pages": {
+    "index.html": {
+      "settings": {
+        "main": true,
+        "title": "Mobirise Mobile Website Builder",
+        "meta_descr": "Free Responsive Website Maker. Create awesome mobile-first websites. Easy and fast - No coding!",
+        "header_custom": "<!-- Paste any valid HTML code here. The code will be inserted to the end of <head> section, right before </head> -->",
+        "footer_custom": "<!-- Paste any valid HTML code here. The code will be inserted to the end of <body> section, right before </body> -->"
+      },
+      "components": [
+        {
+          "_name": "header1",
+          "center": true,
+          "_anchor": "header1-1",
+          "_params": {
+            "parallax": true,
+            "bgImageRadio": false,
+            "bgImage": "{PROJECT_IMAGES}bg.jpg",
+            "bgColor": "#28324e",
+            "bgColorRadio": false,
+            "bgVideo": {
+              "width": 1280,
+              "height": 720,
+              "url": "https://www.youtube.com/embed/UCgoG738qg4?rel=0&autoplay=0&loop=0"
+            },
+            "bgVideoRadio": true,
+            "contentAlign": "center",
+            "overlay": true,
+            "overlayOpacity": "0.6",
+            "overlayColor": "#222",
+            "showTitle": false,
+            "showText": false,
+            "showButtons": false,
+            "showArrow": false
+          },
+          "title": "MOBIRISE WEBSITE BUILDER",
+          "text": "Create awesome mobile-friendly websites. No coding and free.",
+          "buttons": "<a data-app-btn=\"true\" class=\"mbr-buttons__btn btn btn-lg btn-default animated fadeInUp delay\" href=\"http://mobirise.com\" data-toolbar=\"-mbrBtnMove\">FOR MAC</a>"
+        }
+      ]
+    }
+  }
+}

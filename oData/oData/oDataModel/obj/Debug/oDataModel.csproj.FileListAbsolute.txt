@@ -1,0 +1,8 @@
+C:\sources\lahman\oData\oData\oDataModel\bin\Debug\oDataModel.dll.config
+C:\sources\lahman\oData\oData\oDataModel\bin\Debug\oDataModel.dll
+C:\sources\lahman\oData\oData\oDataModel\bin\Debug\oDataModel.pdb
+C:\sources\lahman\oData\oData\oDataModel\bin\Debug\Telerik.OpenAccess.35.Extensions.dll
+C:\sources\lahman\oData\oData\oDataModel\bin\Debug\Telerik.OpenAccess.35.Extensions.xml
+C:\sources\lahman\oData\oData\oDataModel\obj\Debug\oDataModel.csprojResolveAssemblyReference.cache
+C:\sources\lahman\oData\oData\oDataModel\obj\Debug\oDataModel.dll
+C:\sources\lahman\oData\oData\oDataModel\obj\Debug\oDataModel.pdb

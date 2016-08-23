@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="LahmanConnection-Web.config Connection String" description="LahmanConnection Connection String used in web.config by the application to access the database." defaultValue="data source=lahman.cis9zkc7rfcj.us-east-1.rds.amazonaws.com;initial catalog=Lahman;persist security info=True;user id=davidem;password=Lepanto1571" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\sources\\lahman\\oData\\oData\\oData\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='LahmanConnection']/@connectionString" />
+  </parameter>
+</parameters>

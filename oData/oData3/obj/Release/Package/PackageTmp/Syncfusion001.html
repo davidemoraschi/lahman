@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Flat Grid</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <link href="http://js.syncfusion.com/demos/web/themes/bootstrap.min.css" rel="stylesheet" />
+    <link href="http://cdn.syncfusion.com/13.2.0.39/js/web/flat-azure/ej.web.all.min.css" rel="stylesheet" />
+    <link href="http://js.syncfusion.com/demos/web/themes/default.css" rel="stylesheet" />
+    <link href="http://js.syncfusion.com/demos/web/themes/default-responsive.css" rel="stylesheet" />
+    <link href="http://js.syncfusion.com/demos/web/themes/responsive-css/ej.responsive.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+       <script src="http://cdn.syncfusion.com/js/assets/external/jquery-1.10.2.min.js"></script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script type="text/javascript" src="http://cdn.syncfusion.com/js/assets/external/jquery-2.1.4.min.js"></script>
+    <!--<![endif]-->
+    <script type="text/javascript" src="http://cdn.syncfusion.com/js/assets/external/jquery.easing.1.3.min.js"></script>
+    <script type="text/javascript" src="http://cdn.syncfusion.com/js/assets/external/jquery.globalize.min.js"></script>
+    <script type="text/javascript" src="http://jsplayground.syncfusion.com/13.2.0.29/scripts/web/jsondata.min.js"></script>
+    <script type="text/javascript" src="http://cdn.syncfusion.com/js/assets/external/jsrender.min.js"></script>
+    <script type="text/javascript" src="https://cdn.syncfusion.com/13.2.0.39/js/web/ej.web.all.min.js"></script>
+    <script type="text/javascript" src="http://js.syncfusion.com/demos/web/scripts/properties.js"></script>
+</head>
+<body>
+    <div class="content-container-fluid">
+        <div class="row">
+            <div class="cols-sample-area">
+                <div id="Grid"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $("#Grid").ejGrid({
+                // the datasource "window.gridData" is referred from jsondata.min.js
+                dataSource: window.gridData,
+                allowPaging: true,
+                gridLines: ej.Grid.GridLines.Vertical,
+                columns: [
+                        { field: "OrderID", isPrimaryKey: true, headerText: "Order ID", textAlign: ej.TextAlign.Right, validationRules: { required: true, number: true }, width: 90 },
+                        { field: "CustomerID", headerText: 'Customer ID', validationRules: { required: true, minlength: 3 }, width: 90 },
+                        { field: "EmployeeID", headerText: 'Employee ID', editType: ej.Grid.EditingType.Dropdown, textAlign: ej.TextAlign.Right, width: 80, validationRules: { number: true, range: [0, 1000] } },
+                        { field: "Freight", headerText: 'Freight', textAlign: ej.TextAlign.Right, editType: ej.Grid.EditingType.Numeric, editParams: { decimalPlaces: 2 }, validationRules: { range: [0, 1000] }, width: 80, format: "{0:C}" },
+                        { field: "ShipName", headerText: 'Ship Name', width: 150 },
+                        { field: "ShipCountry", headerText: 'Ship Country', editType: ej.Grid.EditingType.Dropdown, width: 90 }
+                ]
+            });
+            $("#selection").ejDropDownList({ width: "120px", change: "onSelectionTypeChange", selectedItemIndex: 0 });
+
+        });
+        $("#sampleProperties").ejPropertiesPanel();
+        function onSelectionTypeChange(args) {
+            $("#Grid").ejGrid("model.gridLines", args.value);
+        }
+    </script>
+</body>
+</html>

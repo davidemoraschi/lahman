@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Lahman oData Example 2</title>
+    <!-- Ignite UI Required Combined CSS Files -->
+    <!--<link href="Content/Infragistics/css/themes/metro/infragistics.theme.css" rel="stylesheet" />
+    <link href="Content/Infragistics/css/structure/infragistics.css" rel="stylesheet" />-->
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="http://cdn-na.infragistics.com/igniteui/2015.2/latest/css/themes/metro/infragistics.theme.css" rel="stylesheet" />
+    <link href="http://cdn-na.infragistics.com/igniteui/2015.2/latest/css/structure/infragistics.css" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <!--<script src="scripts/Infragistics/js/infragistics.core.js"></script>
+    <script src="scripts/Infragistics/js/infragistics.lob.js"></script>-->
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="http://cdn-na.infragistics.com/igniteui/2015.2/latest/js/infragistics.core.js"></script>
+    <script src="http://cdn-na.infragistics.com/igniteui/2015.2/latest/js/infragistics.lob.js"></script>
+
+</head>
+<body>
+    <table id="hierarchicalGrid"></table>
+    <br />
+
+    <script type="text/javascript">
+        $(function () {
+            // Renders the table
+            var renderTable = function (success, error) {
+                $("#hierarchicalGrid").igHierarchicalGrid({
+                    //width: "100%",
+                    //initialDataBindDepth: 1,
+                    dataSource: ds,
+                    autoGenerateLayouts: false,
+                    autoGenerateColumns: false,
+                    primaryKey: "playerID",
+                    columns: [
+                        { key: "playerID", headerText: "Player ID", dataType: "string" },
+                        { key: "nameFirst", headerText: "First Name", dataType: "string" },
+                        { key: "nameLast", headerText: "Family Name", dataType: "string" },
+                        { key: "nameGiven", headerText: "Given Name", dataType: "string" }
+                    ],
+                    columnLayouts: [
+                        {
+                            key: "Appearances",
+                            primaryKey: "yearID,teamID",
+                            foreignKey: "playerID",
+                            autoGenerateColumns: false,
+                            columns: [
+                               { key: "yearID", headerText: "Year", dataType: "number" },
+                               { key: "teamID", headerText: "Team ID", dataType: "string" },
+                               { key: "G_all", headerText: "Games Played", dataType: "number" }//,
+                                //{ key: "nameGiven", headerText: "Given Name", dataType: "string" }
+                            ]
+                        }
+                    ],
+                    features: [
+                        {
+                            name: "Paging",
+                            type: "remote",
+                            pageSize: 15
+                        },
+                        {
+                            name: "Sorting",
+                            type: "remote"
+                        },
+                        {
+                            name: "Selection"
+                        },
+                        {
+                            name: "Filtering",
+                            type: "remote",
+                            //filterDropDownItemIcons: false,
+                            //filterDropDownWidth: 200
+                        }
+                    ]
+                });
+            }
+
+            //// The $.ig.DataSchema is used to define the schema of the data
+            //var oDataSchema = new $.ig.DataSchema("json", {
+            //    fields: [
+            //        { name: "playerID" },
+            //        { name: "nameFirst" },
+            //        { name: "nameLast" }
+            //    ],
+            //    searchField: "value"
+            //});
+
+
+            // service Url $select=playerID,nameFirst,nameLast,nameGiven,birthYear,birthCity,birthCountry&
+            //debugger;
+            var url = "/ODataService.svc/Masters?$format=json&$expand=Appearances/Team&$select=playerID,nameFirst,nameLast,nameGiven,Appearances/G_all,Appearances/yearID,Appearances/teamID";
+            // This code creates an $.ig.DataSource bound to oData service
+            var ds = new $.ig.DataSource({
+                type: "remoteUrl",
+                //type: "json",
+                callback: renderTable,
+                dataSource: url,
+                //schema: oDataSchema,
+                responseDataKey: "value",
+                //responseDataType: "json",
+                responseContentType: "application/json; charset=utf-8",
+                responseTotalRecCountKey: "odata.count",
+                paging: {
+                    enabled: true,
+                    pageSize: 15,
+                    type: "remote"
+                },
+                filtering: {
+                    type: "remote",
+                    caseSensitive: true,
+                    //applyToAllData: true
+                },
+
+            });
+
+            // Binds to the underlying data
+            ds.dataBind();
+        });
+
+    </script>
+</body>
+</html>

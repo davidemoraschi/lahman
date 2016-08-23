@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="lahman" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\sources\\lahman\\oData\\oData3\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\sources\\lahman\\oData\\oData3\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="LahmanConnection-Web.config Connection String" description="" value="Data Source=lahman.cis9zkc7rfcj.us-east-1.rds.amazonaws.com;Initial Catalog=Lahman;Persist Security Info=True;User ID=davidem;Password=Lepanto1571" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\sources\\lahman\\oData\\oData3\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='LahmanConnection']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,318 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Lahman oData Example 3</title>
+    <!-- Ignite UI Required Combined CSS Files -->
+    <!--<link href="Content/Infragistics/css/themes/metro/infragistics.theme.css" rel="stylesheet" />
+    <link href="Content/Infragistics/css/structure/infragistics.css" rel="stylesheet" />-->
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="http://cdn-na.infragistics.com/igniteui/2015.2/latest/css/themes/metro/infragistics.theme.css" rel="stylesheet" />
+    <link href="http://cdn-na.infragistics.com/igniteui/2015.2/latest/css/structure/infragistics.css" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <!--<script src="scripts/Infragistics/js/infragistics.core.js"></script>
+    <script src="scripts/Infragistics/js/infragistics.lob.js"></script>-->
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="http://cdn-na.infragistics.com/igniteui/2015.2/latest/js/infragistics.core.js"></script>
+    <script src="http://cdn-na.infragistics.com/igniteui/2015.2/latest/js/infragistics.lob.js"></script>
+
+</head>
+<body>
+    <table id="hierarchicalGrid"></table>
+    <br />
+
+    <script type="text/javascript">
+        $(function () {
+            var myUrlParamsEncoding = function (item, params) {
+                debugger;
+                //alert("myUrlParamsEncoding");
+                //item.settings.dataSource = item.settings.dataSource + "&$format=json";
+                params.extraParams.$format = "json";
+            }
+            // Renders the table
+            var renderTable = function (success, error) {
+                $("#hierarchicalGrid").igHierarchicalGrid({
+                    dataSource: ds,
+                    features: [
+                        {
+                            name: "Paging",
+                            type: "remote",
+                            pageSize: 20
+                        },
+                        {
+                            name: "Sorting",
+                            type: "remote"
+                        },
+                        {
+                            name: "Selection"
+                        },
+                        {
+                            name: "Filtering",
+                            type: "remote",
+                            //filterDropDownItemIcons: false,
+                            //filterDropDownWidth: 200
+                        }
+                    ]
+                    //virtualization: true
+                    //showFooter: false
+
+                });
+            }
+
+            //// The $.ig.DataSchema is used to define the schema of the data
+            //var oDataSchema = new $.ig.DataSchema("json", {
+            //    fields: [
+            //        { name: "playerID" },
+            //        { name: "nameFirst" },
+            //        { name: "nameLast" }
+            //    ],
+            //    searchField: "value"
+            //});
+
+
+            // service Url
+            //debugger;
+            var url = "/ODataService.svc/Masters?$select=playerID,nameFirst,nameLast,nameGiven,birthYear,birthCity,birthCountry";
+            // This code creates an $.ig.DataSource bound to oData service
+            var ds = new $.ig.DataSource({
+                urlParamsEncoded: myUrlParamsEncoding,
+                type: "remoteUrl",
+                //type: "json",
+                callback: renderTable,
+                dataSource: url,
+                //schema: oDataSchema,
+                responseDataKey: "value",
+                //responseDataType: "json",
+                responseContentType: "application/json; charset=utf-8",
+                responseTotalRecCountKey: "odata.count",
+                paging: {
+                    enabled: true,
+                    pageSize: 20,
+                    type: "remote"
+                },
+                filtering: {
+                    type: "remote",
+                    caseSensitive: true,
+                    //applyToAllData: true
+                },
+
+            });
+
+            // Binds to the underlying data
+            ds.dataBind();
+        });
+
+
+        //$(function () {
+        //    //debugger;
+        //    var myUrlParamsEncoding = function (item, params) {
+        //        debugger;
+        //        //alert("myUrlParamsEncoding");
+        //        item.settings.dataSource = item.settings.dataSource + "&$format=json";
+        //    }
+
+        //    var url = "/ODataService.svc/Masters?$select=playerID,nameFirst,nameLast,nameGiven,birthYear,birthCity,birthCountry";
+        //    // This code creates an $.ig.DataSource bound to oData service
+        //    var ds = new $.ig.DataSource({
+        //        //urlParamsEncoding: myUrlParamsEncoding,
+        //        type: "remoteUrl",
+        //        //type: "json",
+        //        //callback: renderTable,
+        //        dataSource: url,
+        //        //schema: oDataSchema,
+        //        responseDataKey: "value",
+        //        //responseDataType: "json",
+        //        responseContentType: "application/json; charset=utf-8",
+        //        responseTotalRecCountKey: "odata.count",
+        //        paging: {
+        //            enabled: true,
+        //            pageSize: 20,
+        //            type: "remote"
+        //        },
+        //        filtering: {
+        //            type: "remote",
+        //            caseSensitive: true,
+        //            //applyToAllData: true
+        //        },
+
+        //    });
+
+        //    // Binds to the underlying data
+        //    ds.dataBind();
+
+        //    $("#hierarchicalGrid").igHierarchicalGrid({
+        //        //igchildgridcreating:
+        //        //    function (e, args)
+        //        //    {
+        //        //        debugger;
+        //        //        $("#hierarchicalGrid").igHierarchicalGrid("option", "dataSource", "/ODataService.svc/Masters");
+        //        //    },
+        //        rest: true,
+        //        autoGenerateColumns: false,
+        //        autoGenerateLayouts: false,
+        //        initialDataBindDepth: 0,
+        //        primaryKey: "playerID",
+        //        odata: true,
+        //        columns: [
+        //                    { headerText: "Player ID", key: "playerID", width: "150px" },
+        //                    { headerText: "First Name", key: "nameFirst", width: "300px" },
+        //                    { headerText: "Last Name", key: "nameLast", width: "200px" }
+        //        ],
+        //        columnLayouts: [
+        //            {
+        //                key: "Appearances",
+        //                primaryKey: "yearID,teamID",
+        //                foreignKey: "playerID",
+        //                responseDataKey: 'value',
+        //                autoGenerateColumns: false,
+        //                autoGenerateLayouts: false,
+        //                odata: true,
+        //                columns: [
+        //                { key: "teamID", headerText: "Team ID", dataType: "string" },
+        //                { key: "yearID", headerText: "Year", dataType: "number" },
+        //                { key: "G_all", headerText: "Games Played", dataType: "number" }
+        //                ],
+        //                columnLayouts: [
+        //                    {
+        //                        key: "Teams",
+        //                        foreignKey: "yearID,teamID",
+        //                        responseDataKey: 'value',
+        //                        odata: true,
+        //                        autoGenerateColumns: false,
+        //                        autoGenerateLayouts: false,
+        //                        columns: [
+        //                          //{ key: "OrderID", headerText: "Order ID" },
+        //                          //{ key: "UnitPrice", headerText: "Unit Price", dataType: "number" },
+        //                          { key: "name", headerText: "Team Name", dataType: "string" }
+        //                        ]
+        //                    }
+        //                ]
+        //            }
+        //        ],
+        //        responseDataKey: "value",
+        //        responseTotalRecCountKey: "odata.count",
+        //        dataSource: ds//, //"/ODataService.svc/Masters?",
+        //        //responseContentType: "application/json; charset=utf-8",
+        //        //type: "remoteUrl",
+        //        //type: "jsonp",
+        //        //height: '500px',
+        //        //features: [
+        //        //    { name: "Paging", type: "remote", pageSize: 15 },
+        //        //    { name: "Sorting", type: "remote" },
+        //        //    { name: "Selection" },
+        //        //    { name: "Filtering", type: "remote",
+        //        //        //filterDropDownItemIcons: false,
+        //        //        //filterDropDownWidth: 200
+        //        //    }
+        //        //]
+
+        //    });
+
+        //});
+        ////$(function () {
+        ////    // Renders the table
+        ////    var renderTable = function (success, error) {
+        ////        $("#hierarchicalGrid").igHierarchicalGrid({
+        ////            odata: true,
+        ////            initialDataBindDepth: 0,
+        ////            //width: "100%",
+        ////            //initialDataBindDepth: 1,
+        ////            dataSource: ds,
+        ////            //autoGenerateLayouts: false,
+        ////            //autoGenerateColumns: false,
+        ////            autoGenerateColumns: true,
+        ////            primaryKey: "playerID",
+        ////            //columns: [
+        ////            //    { key: "playerID", headerText: "Player ID", dataType: "string" },
+        ////            //    { key: "nameFirst", headerText: "First Name", dataType: "string" },
+        ////            //    { key: "nameLast", headerText: "Family Name", dataType: "string" },
+        ////            //    { key: "nameGiven", headerText: "Given Name", dataType: "string" }
+        ////            //],
+        ////            columnLayouts: [
+        ////                {
+        ////                    key: "Appearances",
+        ////                    childrenDataProperty: "Appearances",
+        ////                    primaryKey: "yearID,teamID",
+        ////                    //foreignKey: "playerID",
+        ////                    //autoGenerateColumns: false,
+        ////                    autoGenerateColumns: true,
+        ////                    columns: [
+        ////                       { key: "yearID", headerText: "Year", dataType: "number" },
+        ////                       { key: "teamID", headerText: "Team ID", dataType: "string" },
+        ////                       { key: "G_all", headerText: "Games Played", dataType: "number" }//,
+        ////                        //{ key: "nameGiven", headerText: "Given Name", dataType: "string" }
+        ////                    ]
+        ////                }
+        ////            ],
+        ////            features: [
+        ////                {
+        ////                    name: "Paging",
+        ////                    type: "remote",
+        ////                    pageSize: 15
+        ////                },
+        ////                {
+        ////                    name: "Sorting",
+        ////                    type: "remote"
+        ////                },
+        ////                {
+        ////                    name: "Selection"
+        ////                },
+        ////                {
+        ////                    name: "Filtering",
+        ////                    type: "remote",
+        ////                    //filterDropDownItemIcons: false,
+        ////                    //filterDropDownWidth: 200
+        ////                }
+        ////            ]
+        ////        });
+        ////    }
+
+        ////    //// The $.ig.DataSchema is used to define the schema of the data
+        ////    //var oDataSchema = new $.ig.DataSchema("json", {
+        ////    //    fields: [
+        ////    //        { name: "playerID" },
+        ////    //        { name: "nameFirst" },
+        ////    //        { name: "nameLast" }
+        ////    //    ],
+        ////    //    searchField: "value"
+        ////    //});
+
+
+        ////    // service Url $select=playerID,nameFirst,nameLast,nameGiven,birthYear,birthCity,birthCountry&
+        ////    //debugger;
+        ////    var url = "/ODataService.svc/Masters?$format=json";
+        ////    // This code creates an $.ig.DataSource bound to oData service
+        ////    var ds = new $.ig.DataSource({
+        ////        type: "remoteUrl",
+        ////        //type: "json",
+        ////        callback: renderTable,
+        ////        dataSource: url,
+        ////        //schema: oDataSchema,
+        ////        responseDataKey: "value",
+        ////        //responseDataType: "json",
+        ////        responseContentType: "application/json; charset=utf-8",
+        ////        responseTotalRecCountKey: "odata.count",
+        ////        paging: {
+        ////            enabled: true,
+        ////            pageSize: 15,
+        ////            type: "remote"
+        ////        },
+        ////        filtering: {
+        ////            type: "remote",
+        ////            caseSensitive: true,
+        ////            //applyToAllData: true
+        ////        },
+
+        ////    });
+
+        ////    // Binds to the underlying data
+        ////    ds.dataBind();
+        ////});
+
+    </script>
+</body>
+</html>
